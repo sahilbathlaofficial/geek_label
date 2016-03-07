@@ -1,3 +1,5 @@
+/* Variables */
+
 $base-background-color: #EEF4F2; //lightest
 $base-border-color: #D9DDE1; //light
 $base-text-color: #788290; //dark
@@ -5,9 +7,42 @@ $base-text-color-active: #403F41; //darkest
 $color-white: #FFF;
 $color-base: #D83454;
 
+/* Mixins */
+
+@mixin slide-down ($color, $bgColor, $backgroundImg) {
+	border: 3px solid $color;
+	background-color: $bgColor;
+	color: $color;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	display: block;
+	position: relative;
+	bottom: 0px;
+
+	&:before {
+		content: '';
+		background: 10px 15px url($backgroundImg) no-repeat;
+		background-size: 60%;
+		width: 40px;
+		height: 30px;
+		display: block;
+	}
+}
+
+@mixin geek-think($background_image) {
+	background-image: url($background-image);
+	width: 560px;
+	height: 450px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: inline-block;
+}
+
 @font-face {
-    font-family: museosans;
-    src: url('../fonts/museosans-500.otf');
+	font-family: museosans;
+	src: url('../fonts/museosans-500.otf');
 }
 
 .one-third { width: 33.33%; }
@@ -104,29 +139,6 @@ p {
   margin: auto;
 }
 
-@mixin slide-down ($color, $bgColor, $backgroundImg) {
-	border: 3px solid $color;
-	background-color: $bgColor;
-	color: $color;
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	margin: auto;
-	display: block;
-	position: relative;
-	bottom: 0px;
-
-	&:before {
-		content: '';
-		background: 0px 8px url($backgroundImg) no-repeat;
-		background-size: 100%;
-		width: 20px;
-		height: 20px;
-		display: inline-block;
-		vertical-align: middle;
-	}
-}
-
 .icon--slide-down {
 	@include slide-down($color-white, $color-base, '../images/dropdown-icon.png');
 }
@@ -134,17 +146,8 @@ p {
 .icon--slide-down--dark {
 	@include slide-down($base-text-color-active, $color-white, '../images/dropdown-icon-black.png');
 	position: absolute;
-    bottom: 10px;
-    left: 48%
-}
-
-@mixin geek-think($background_image) {
-	background-image: url($background-image);
-	width: 560px;
-	height: 450px;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	display: inline-block;
+	bottom: 10px;
+	left: 48%
 }
 
 .geek-think-1 {
@@ -204,8 +207,8 @@ p {
 		color: $base-text-color;
 		font-size: 1em;
 		margin: 40px;
-    padding: 10px;
-    top: 25px;
+	padding: 10px;
+	top: 25px;
 	}
 	&:after {
 		content: ">";
@@ -214,8 +217,8 @@ p {
 		color: $base-text-color;
 		font-size: 1em;
 		margin: 40px;
-    padding: 10px;
-    top: 25px;
+	padding: 10px;
+	top: 25px;
 	}
 }
 
@@ -296,18 +299,27 @@ h6 {
 	color: $base-text-color-active;
 }
 
-/*tablets*/
+.map:before {
+	content: 'How to find us';
+}
+
+
+/* Tablets Media Query */
 @media screen and (min-width: 600px) and (max-width: 1240px) {
 
-	p, body {
-		font-size: 1.2em;
+	p, body, .section-view:first-child .tag-line {
+		font-size: 4vh;
 	}
 
-	.section-view:first-child {
-		.tag-line {
-			font-size: 1em;
-		}
+	.heading {
+		font-size: 10vh;
 	}
+
+	.logo {
+		height:210px;
+		width: 400px;
+	}
+
 	.section-item {
 		width: 80%;
 	}
@@ -316,12 +328,18 @@ h6 {
 		margin: 20px auto !important;
 	}
 
+	.service-section p {
+		display: inline-block;
+		margin: 40px 10px;
+	}
+
 	.section-view {
 		form {
-			width: 50%;
+			width: 80%;
 		}
 		input, textarea, button {
-			font-size: 1em;
+			font-size: 3vh;
+			height: 10vh;
 		}
 	}
 
@@ -337,14 +355,15 @@ h6 {
 			background-size: 100%;
 			margin: 0;
 			top: 20%;
-	    position: relative;
-	    left: 17%;
+		position: relative;
+		left: 17%;
 		}
 	}
 
 	.service-item {
-		width: 50%;
-		margin-bottom: 10px;
+		width: 80%;
+		margin: 30px;
+		text-align:left;
 	}
 
 	.branding-service {
@@ -362,9 +381,13 @@ h6 {
 		height: 400px;
 	}
 
+	.map:before {
+		content: 'Find us';
+	}
+
 }
 
-/*mobiles*/
+/* Mobile Media Queries */
 @media screen and (min-width: 400px) and (max-width: 601px) {
 
 	.heading {
@@ -413,8 +436,8 @@ h6 {
 			background-size: 100%;
 			margin: 0;
 			top: 25%;
-	    position: relative;
-	    left: 20%;
+		position: relative;
+		left: 20%;
 		}
 	}
 
