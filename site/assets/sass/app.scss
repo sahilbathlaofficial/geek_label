@@ -113,6 +113,8 @@ p {
 	height: 50px;
 	margin: auto;
 	display: block;
+	position: relative;
+	bottom: 0px;
 
 	&:before {
 		content: '';
@@ -131,6 +133,9 @@ p {
 
 .icon--slide-down--dark {
 	@include slide-down($base-text-color-active, $color-white, '../images/dropdown-icon-black.png');
+	position: absolute;
+    bottom: 10px;
+    left: 48%
 }
 
 @mixin geek-think($background_image) {
