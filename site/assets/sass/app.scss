@@ -5,6 +5,11 @@ $base-text-color-active: #403F41; //darkest
 $color-white: #FFF;
 $color-base: #D83454;
 
+@font-face {
+    font-family: museosans;
+    src: url('../fonts/museosans-500.otf');
+}
+
 .one-third { width: 33.33%; }
 .full-width { width: 100%; }
 
@@ -20,6 +25,7 @@ html, body {
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
+	font-family: museosans;
 }
 
 body {
@@ -90,46 +96,62 @@ p {
 }
 
 .logo{
-	background-image: url('../images/logo.png');
+	background-image: url('../images/spectacles.png');
 	width: 200px;
-  height: 80px;
+  height: 120px;
   background-repeat: no-repeat;
+  background-size: 100%;
   margin: auto;
 }
 
-.icon--slide-down {
-	border: 3px solid $color-white;
+@mixin slide-down ($color, $bgColor, $backgroundImg) {
+	border: 3px solid $color;
+	background-color: $bgColor;
+	color: $color;
 	border-radius: 50%;
 	width: 50px;
 	height: 50px;
 	margin: auto;
-	background-color: $color-base;
-	color: $color-white;
 	display: block;
 
 	&:before {
-		content: '^';
-		transform: rotateX(180deg);
+		content: '';
+		background: 0px 8px url($backgroundImg) no-repeat;
+		background-size: 100%;
+		width: 20px;
+		height: 20px;
 		display: inline-block;
 		vertical-align: middle;
 	}
 }
 
-.geek-think {
-	background-image: url('../images/think.png');
-	width: 560px;
-  height: 450px;
-  background-repeat: no-repeat;
-  display: inline-block;
+.icon--slide-down {
+	@include slide-down($color-white, $color-base, '../images/dropdown-icon.png');
 }
 
 .icon--slide-down--dark {
-	border: 3px solid $base-text-color-active;
-	background-color: $color-white;
-	color: $base-text-color-active;
-	position: absolute;
-	bottom: 10px;
-	left: 50%;
+	@include slide-down($base-text-color-active, $color-white, '../images/dropdown-icon-black.png');
+}
+
+@mixin geek-think($background_image) {
+	background-image: url($background-image);
+	width: 560px;
+	height: 450px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: inline-block;
+}
+
+.geek-think-1 {
+	@include geek-think('../images/images-with-computer-guy.png');
+}
+
+.geek-think-2 {
+	@include geek-think('../images/images-with-computer-guy1.png');
+}
+
+.geek-think-3 {
+	@include geek-think('../images/images-with-computer-guy2.png');
 }
 
 .service-symbol {
@@ -163,11 +185,7 @@ p {
 }
 
 .branding-service {
-	font-size: 5vw;
-	font-weight: bold;
-	color: white;
-	display: inline-block;
-	line-height: 2.5em;
+	background-image: url('../images/branding-service.png');
 }
 
 .slider {
@@ -199,21 +217,22 @@ p {
 .client-logo {
 	display: inline-block;
 	background-repeat: no-repeat;
-	margin: 40px;
+	background-size: auto 60%;
+	margin: 60px;
 	width: 240px;
 	height: 100px;
 }
 
 .client-logo-1 {
-	background-image: url('../images/cl1.png');
+	background-image: url('../images/client1.png');
 }
 
 .client-logo-2 {
-	background-image: url('../images/cl2.png');
+	background-image: url('../images/client2.png');
 }
 
 .client-logo-3 {
-	background-image: url('../images/cl3.png');
+	background-image: url('../images/client3.png');
 }
 
 .heading {
@@ -412,7 +431,7 @@ h6 {
 		&:after {
 			content: '>';
 			right: 0;
-			top: 45%;
+			top: 40%;
 			margin: 10px;
 			cursor: pointer;
 		}
