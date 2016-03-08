@@ -132,6 +132,7 @@ p {
 		display: inline-block;
 		font-size: 1.5vw;
 		margin: 40px auto;
+		width: 66%
 	}
 	.heading {
 		color: $color-white;
@@ -313,6 +314,16 @@ h6 {
 
 .height-60 {
 	height: 60vh;
+}
+
+/* Table + Mobile Media Query */
+
+@media screen and (max-width: 1240px) {
+	.section-view:first-child {
+		.tag-line {
+			width: 100%;
+		}
+	}
 }
 
 
