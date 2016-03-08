@@ -1,2 +1,2 @@
-# greek_label
-A HTML/CSS Prototype of Greek Label
+# Geek_label
+A HTML/CSS Prototype of Geek Label
