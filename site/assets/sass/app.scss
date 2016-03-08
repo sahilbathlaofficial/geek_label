@@ -11,8 +11,8 @@ p {
 
 .map-information-box {
 	text-align: left;
-    line-height: 0.3;
-    color: $color-grey;
+	line-height: 0.3;
+	color: $color-grey;
 	p {
 		font-size: 12px;
 	}
@@ -167,7 +167,9 @@ p {
 }
 
 .client-logo-carousel {
-	margin: 60px;
+	margin: 60px 40%;
+	background-size: auto 30%;
+	width: 100%;
 }
 
 .client-logo-1 {
@@ -236,8 +238,12 @@ h6 {
 	height: 60vh;
 }
 
-.client-carousel {
+.client-carousel, .contact-mobile {
 	display:none;
+}
+
+.contact-desktop {
+	display: block;
 }
 
 /* Tablet + Mobile Media Queries */
@@ -261,6 +267,12 @@ h6 {
 	input, textarea, button {
 		font-size: 0.6em;
 	}
+	.contact-desktop {
+		display: none;
+	}
+	.contact-mobile {
+		display: block;
+	}
 	.service-symbol {
 		margin: 5px 20px;
 		float: left;
@@ -276,17 +288,13 @@ h6 {
 
 	.service-item {
 		width: 100%;
-    	margin: 5% 0 0 10%;
-    	text-align: left;
-	}
-
-	.icon--slide-down--dark {
-		left: 45%;
+		margin: 5% 0 0 10%;
+		text-align: left;
 	}
 }
 
 /* Tablets Media Query */
-@media screen and (min-device-width: 768px) and (max-device-width: 1240px) {
+@media screen and (min-device-width: 600px) and (max-device-width: 1240px) {
 
 	.logo {
 		height: 190px;
@@ -336,13 +344,27 @@ h6 {
 		}
 	}
 
+	.client-logo {
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-size: auto 50%;
+		background-position: 50%;
+		margin: 0 0 50px 0;
+		width: 50%;
+		height: 150px;
+	}
+
+	.icon--slide-down--dark {
+		left: 45%;
+	}
+
 }
 
 /* Mobile Media Queries */
-@media screen and (min-device-width: 320px) and (max-device-width: 601px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 599px) {
 
 	.logo {
-  		height: 65px;
+		height: 65px;
 	}
 
 	.client-carousel {
@@ -388,5 +410,9 @@ h6 {
 	.geek-think-1, .geek-think-2, .geek-think-3 {
 		height: 200px;
 		width: 250px;
+	}
+
+	.icon--slide-down--dark {
+		left: 40%;
 	}
 }
