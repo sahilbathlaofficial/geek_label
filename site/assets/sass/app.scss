@@ -6,6 +6,7 @@ $base-text-color: #788290; //dark
 $base-text-color-active: #403F41; //darkest
 $color-white: #FFF;
 $color-base: #D83454;
+$color-grey: #777;
 
 /* Mixins */
 
@@ -47,6 +48,14 @@ $color-base: #D83454;
 
 .one-third { width: 33.33%; }
 .full-width { width: 100%; }
+.map-information-box {
+	text-align: left;
+    line-height: 0.3;
+    color: $color-grey;
+	p {
+		font-size: 12px;
+	}
+}
 
 html, body {
 	height: 100%;
@@ -302,6 +311,10 @@ h6 {
 	content: 'How to find us';
 }
 
+.height-60 {
+	height: 60vh;
+}
+
 
 /* Tablets Media Query */
 @media screen and (min-width: 600px) and (max-width: 1240px) {
@@ -317,10 +330,6 @@ h6 {
 	.logo {
 		height:210px;
 		width: 400px;
-	}
-
-	.section-item {
-		width: 80%;
 	}
 
 	.service-head {
