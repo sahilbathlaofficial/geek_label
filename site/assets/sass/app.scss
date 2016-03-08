@@ -1,82 +1,5 @@
-/* Variables */
-
-$base-background-color: #EEF4F2; //lightest
-$base-border-color: #D9DDE1; //light
-$base-text-color: #788290; //dark
-$base-text-color-active: #403F41; //darkest
-$color-white: #FFF;
-$color-base: #D83454;
-$color-grey: #777;
-
-/* Mixins */
-
-@mixin slide-down ($color, $bgColor, $backgroundImg) {
-	border: 3px solid $color;
-	background-color: $bgColor;
-	color: $color;
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	margin: auto;
-	display: block;
-	position: relative;
-	bottom: 0px;
-
-	&:before {
-		content: '';
-		background: 10px 15px url($backgroundImg) no-repeat;
-		background-size: 60%;
-		width: 40px;
-		height: 30px;
-		display: block;
-	}
-}
-
-@mixin geek-think($background_image) {
-	background-image: url($background-image);
-	width: 560px;
-	height: 450px;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	display: inline-block;
-}
-
-@font-face {
-	font-family: museosans;
-	src: url('../fonts/museosans-500.otf');
-}
-
-.one-third { width: 33.33%; }
-.full-width { width: 100%; }
-.map-information-box {
-	text-align: left;
-    line-height: 0.3;
-    color: $color-grey;
-	p {
-		font-size: 12px;
-	}
-}
-
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-*, *:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
-	font-family: museosans;
-}
-
-body {
-	background-color: $base-background-color;
-	font-size: 2vw;
-	font-weight: 300;
-}
+@import 'base.scss';
+@import 'overrides.scss';
 
 a:focus {
 	outline: 0;
@@ -86,18 +9,14 @@ p {
 	font-size: 2vw;
 }
 
-.text--highlight {
-	color: $color-base;
+.map-information-box {
+	text-align: left;
+    line-height: 0.3;
+    color: $color-grey;
+	p {
+		font-size: 12px;
+	}
 }
-
-.inline-block { display: inline-block !important; }
-
-.push-double--bottom { margin-bottom: 40px !important; }
-.push-double--ends { margin: 40px 0 !important; }
-.flush { margin: 0 !important;}
-.hard--sides {  padding-left: 0 !important; padding-right: 0 !important;  }
-
-.relative { position: relative; }
 
 .section-view {
 	height: 100vh;
@@ -110,6 +29,10 @@ p {
 		width: 33.33%;
 		margin: 0 auto;
 	}
+}
+
+.tag-line {
+	width: 66.6%;
 }
 
 .section--white { background-color: white; }
@@ -125,38 +48,40 @@ p {
 	height: 100%;
 }
 
-.section-view:first-child {
-	background-color: $color-base;
+.service-head {
+	margin: 40px 0;
+}
+
+.theme--pink {
+	background-color: $theme-color;
 	color: $color-white;
 	.tag-line {
 		display: inline-block;
 		font-size: 1.5vw;
 		margin: 40px auto;
-		width: 66%
 	}
 	.heading {
 		color: $color-white;
 	}
 }
 
-.logo{
+.logo {
 	background-image: url('../images/spectacles.png');
-	width: 200px;
-  height: 120px;
+  height: 150px;
   background-repeat: no-repeat;
   background-size: 100%;
   margin: auto;
 }
 
 .icon--slide-down {
-	@include slide-down($color-white, $color-base, '../images/dropdown-icon.png');
+	@include slide-down($color-white, $theme-color, '../images/dropdown-icon.png');
 }
 
 .icon--slide-down--dark {
 	@include slide-down($base-text-color-active, $color-white, '../images/dropdown-icon-black.png');
 	position: absolute;
 	bottom: 10px;
-	left: 48%
+	left: 48%;
 }
 
 .geek-think-1 {
@@ -175,7 +100,7 @@ p {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-	background-color: $color-base;
+	background-color: $theme-color;
 	margin: 40px;
 	display: inline-block;
 	vertical-align: middle;
@@ -206,6 +131,7 @@ p {
 }
 
 .slider {
+	display: block;
 	position: relative;
 	top: 15%;
 
@@ -231,13 +157,17 @@ p {
 	}
 }
 
-.client-logo {
+.client-logo, .client-logo-carousel {
 	display: inline-block;
 	background-repeat: no-repeat;
 	background-size: auto 60%;
 	margin: 60px 0px 0px 100px;
-	width: 240px;
+	width: 250px;
 	height: 100px;
+}
+
+.client-logo-carousel {
+	margin: 60px;
 }
 
 .client-logo-1 {
@@ -260,6 +190,7 @@ p {
 
 .input-group {
 	margin: 20px 0 0 0;
+	width: 100%;
 }
 
 textarea {
@@ -293,17 +224,6 @@ h6 {
 	margin: 0;
 }
 
-.btn {
-	padding: 15px;
-	border-radius: 3px;
-	cursor: pointer;
-	background-color: $color-base;
-	width: 100%;
-  color: $color-white;
-  outline: none;
-  border: none;
-}
-
 *::-webkit-input-placeholder {
 	color: $base-text-color-active;
 }
@@ -316,73 +236,79 @@ h6 {
 	height: 60vh;
 }
 
-/* Table + Mobile Media Query */
+.client-carousel {
+	display:none;
+}
 
-@media screen and (max-width: 1240px) {
-	.section-view:first-child {
-		.tag-line {
-			width: 100%;
+/* Tablet + Mobile Media Queries */
+
+@media screen and (max-device-width: 1240px) {
+	p, body, .section-view:first-child .tag-line {
+		font-size: 3vh;
+	}
+	.tag-line {
+		width: 100%;
+	}
+	.heading {
+		font-size: 8vh;
+	}
+	.service-head {
+		margin: 10px auto !important;
+	}
+	textarea {
+		height: 30vh;
+	}
+	input, textarea, button {
+		font-size: 0.6em;
+	}
+	.service-symbol {
+		margin: 5px 20px;
+		float: left;
+		.symbol {
+			width: 60px;
+			background-size: 100%;
+			margin: 0;
+			top: 25%;
+			position: relative;
+			left: 25%;
 		}
+	}
+
+	.service-item {
+		width: 100%;
+    	margin: 5% 0 0 10%;
+    	text-align: left;
+	}
+
+	.icon--slide-down--dark {
+		left: 45%;
 	}
 }
 
-
 /* Tablets Media Query */
-@media screen and (min-width: 600px) and (max-width: 1240px) {
-
-	p, body, .section-view:first-child .tag-line {
-		font-size: 4vh;
-	}
-
-	.heading {
-		font-size: 10vh;
-	}
+@media screen and (min-device-width: 768px) and (max-device-width: 1240px) {
 
 	.logo {
-		height:210px;
-		width: 400px;
-	}
-
-	.service-head {
-		margin: 20px auto !important;
-	}
-
-	.service-section p {
-		display: inline-block;
-		margin: 40px 10px;
+		height: 190px;
 	}
 
 	.section-view {
 		form {
 			width: 80%;
 		}
-		input, textarea, button {
-			font-size: 3vh;
-			height: 10vh;
-		}
+	}
+	.service-section p {
+		display: inline-block;
+		margin: 40px 0;
 	}
 
 	.service-symbol {
 		width: 120px;
 		height: 120px;
-		margin: 5px 20px;
-		float: left;
-
+		margin: 5px 40px;
 		.symbol {
-			width: 80px;
-			height: 80px;
-			background-size: 100%;
-			margin: 0;
-			top: 20%;
-		position: relative;
-		left: 17%;
+			height: 60px;
 		}
-	}
-
-	.service-item {
-		width: 80%;
-		margin: 30px;
-		text-align:left;
 	}
 
 	.branding-service {
@@ -394,28 +320,35 @@ h6 {
 		line-height: 1.8em;
 	}
 
-	.geek-think {
-		background-size: 100%;
-		width: 400px;
-		height: 400px;
-	}
-
 	.map:before {
 		content: 'Find us';
+	}
+
+	.slider {
+		top: 5%;
+		&:before {
+			content: '<';
+			top: 35%;
+		}
+		&:after {
+			content: '>';
+			top: 35%;
+		}
 	}
 
 }
 
 /* Mobile Media Queries */
-@media screen and (min-width: 400px) and (max-width: 601px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 601px) {
 
-	.heading {
-		font-size: 7vw;
+	.logo {
+  		height: 65px;
 	}
 
-	p, body {
-		font-size: 4vw;
+	.client-carousel {
+		display: block;
 	}
+
 	.section-view {
 		form {
 			width: 100%;
@@ -432,56 +365,28 @@ h6 {
 		}
 	}
 
-	.geek-think {
-		background-size: 100%;
-		width: 400px;
-		height: 400px;
-	}
-
-	.service-item {
-		width: 80%;
-		margin-bottom: 5px;
-	}
-
 	.service-symbol {
-		width: 100px;
-		height: 100px;
-		margin: 5px 20px;
-		float: left;
+		width: 60px;
+		height: 60px;
 
 		.symbol {
-			width: 60px;
-			height: 60px;
-			background-size: 100%;
-			margin: 0;
-			top: 25%;
-		position: relative;
-		left: 20%;
+			background-size: 50%;
+			height: 30px;
 		}
 	}
 
-	.icon--slide-down--dark {
-		left: 45%;
-		font-size: 1em;
+	.service-section p {
+		display: inline-block;
+		margin: 20px 0;
+		font-size: 16px;
 	}
 
 	.slider {
-		top: 0;
+		display:none;
+	}
 
-		&:before {
-			content: '<';
-			left: 0;
-			top: 45%;
-			margin: 10px;
-			cursor: pointer;
-		}
-		&:after {
-			content: '>';
-			right: 0;
-			top: 40%;
-			margin: 10px;
-			cursor: pointer;
-		}
+	.geek-think-1, .geek-think-2, .geek-think-3 {
+		height: 200px;
+		width: 250px;
 	}
 }
-

@@ -3,15 +3,18 @@
 	<head>
 		<title>Geek Label</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/stylesheets/app.css">
 		<script type="text/javascript" src="assets/javascript/jquery-2.2.1.min.js"></script>
 		<script type="text/javascript" src="assets/javascript/scrollintoview.min.js"></script>
 		<script type="text/javascript" src="assets/javascript/main.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="section-view">
+		<div class="section-view  theme--pink">
 			<div class="section-item">
-				<div class="logo"></div>
+				<div class="logo  push--ends"></div>
+				<div class="heading">Geek Label</div>
 				<div class="tag-line">A team of self confessed geeks who are all about great digital design</div>
 				<a class="icon--slide-down" href="#how-to-design-1"></a>
 			</div>
@@ -41,7 +44,7 @@
 		</div>
 		<div class="section-view  section--white" id="services">
 			<div class="section-item--start  service-section">
-				<div class="heading  push-double--ends  service-head">Services</div>
+				<div class="heading  service-head">Services</div>
 				<div class="push-double--bottom">
 					<div class="service-item">
 						<div class="service-symbol"><div class="symbol  development-service"></div></div>
@@ -73,6 +76,27 @@
 					<div class="client-logo-3  client-logo"></div>
 				</div>
 				<a class="icon--slide-down--dark" href="#map"></a>
+				<div class="client-carousel carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+					  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					  <li data-target="#myCarousel" data-slide-to="1"></li>
+					  <li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="client-logo-1  client-logo-carousel"></div>
+						</div>
+						<div class="item">
+							<div class="client-logo-2  client-logo-carousel"></div>
+						</div>
+						<div class="item">
+							<div class="client-logo-3  client-logo-carousel"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="section-view  hard--sides" id="map">

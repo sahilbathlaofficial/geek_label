@@ -1,0 +1,102 @@
+/* Variables */
+
+$base-background-color: #EEF4F2; //lightest
+$base-border-color: #D9DDE1; //light
+$base-text-color: #788290; //dark
+$base-text-color-active: #403F41; //darkest
+$color-white: #FFF;
+$theme-color: #D83454;
+$color-grey: #777;
+
+/* Mixins */
+
+@mixin slide-down ($color, $bgColor, $backgroundImg) {
+	border: 3px solid $color;
+	background-color: $bgColor;
+	color: $color;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	display: block;
+	position: relative;
+	bottom: 0px;
+
+	&:before {
+		content: '';
+		background: 10px 15px url($backgroundImg) no-repeat;
+		background-size: 60%;
+		width: 40px;
+		height: 30px;
+		display: block;
+	}
+}
+
+@mixin geek-think($background_image) {
+	background-image: url($background-image);
+	height: 400px;
+	width: 500px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: inline-block;
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: museosans;
+	src: url('../fonts/museosans-500.otf');
+}
+
+/* Reusable General Classes */
+
+
+.one-third { width: 33.33%; }
+.full-width { width: 100%; }
+.inline-block { display: inline-block !important; }
+.push-double--bottom { margin-bottom: 40px !important; }
+.push-double--ends { margin: 40px 0 !important; }
+.push--ends { margin: 20px 0 !important; }
+.flush { margin: 0 !important;}
+.hard--sides {  padding-left: 0 !important; padding-right: 0 !important;  }
+.relative { position: relative; }
+.text--highlight {
+	color: $theme-color;
+}
+
+/* Buttons */
+
+.btn {
+	padding: 15px;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color: $theme-color;
+	width: 100%;
+	color: $color-white;
+	outline: none;
+	border: none;
+}
+
+
+/* General Definitions */
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: museosans;
+}
+
+body {
+	background-color: $base-background-color;
+	font-size: 2vw;
+	font-weight: 300;
+}

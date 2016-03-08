@@ -1,0 +1,9 @@
+$color-grey: #777;
+.carousel-indicators {
+	.active {
+		background-color: $color-grey;
+	}
+	li {
+		border: 1px solid $color-grey;
+	}
+}
