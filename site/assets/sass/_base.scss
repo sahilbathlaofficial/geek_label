@@ -82,6 +82,7 @@ $color-grey: #777;
 
 html, body {
 	height: 100%;
+	min-height: 1240px;
 	margin: 0;
 	padding: 0;
 }
@@ -108,10 +109,10 @@ body {
 		content: '';
 		display: inline-block;
 		background-image: url($background);
-		width: 30px;
-		height: 30px;
-		margin-right: 10px;
-		background-position: 0px 5px;
+		width: 5vw;
+		height: 5vh;
+		margin-right: 1.5vh;
+		background-position: 0px 1.4vh;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 	}

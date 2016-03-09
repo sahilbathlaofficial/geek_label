@@ -1,4 +1,11 @@
 MainApp = {
+	init: function () {
+		this.handleScrollEvent();
+		this.renderMap();
+		this.lockScreen();
+		this.handleSoftKeyboard();
+	},
+
 	handleScrollEvent: function (event) {
 		$('.icon--slide-down, .icon--slide-down--dark').click(function (event) {
 			event.preventDefault();
@@ -34,10 +41,36 @@ MainApp = {
 			});
 			infowindow.open(map, marker);
 		};
+	},
+
+	lockScreen: function () {
+		try {
+			if (screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation) {
+				screen.orientation.lock('portrait');
+			}
+		} catch (e) {
+			console.log('Screen can not be locked!!');
+		}
+	},
+
+	handleSoftKeyboard: function () {
+		var height = $('.section-view').height();
+		$('input, textarea').focus(function () {
+			var heightChange = $('.section-view').height() - height;
+			if (heightChange) {
+				$('.section-view').height(height + heightChange);
+				$(this).parent().scrollIntoView();
+			}
+		}).blur(function () {
+			if (!$('input:active, textarea:active').length) {
+				height = $('.section-view').height();
+				$('.section-view').height('');
+				$(this).parent().scrollIntoView();
+			}
+		});
 	}
 }
 
 $(function () {
-	MainApp.handleScrollEvent();
-	MainApp.renderMap();
+	MainApp.init();
 });
