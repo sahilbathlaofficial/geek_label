@@ -1,0 +1,681 @@
+/* Variables */
+/* Mixins */
+/* Fonts */
+@font-face {
+  font-family: museosans;
+  src: url("../fonts/museosans-500.otf");
+}
+/* Reusable General Classes */
+/* line 54, ../sass/_base.scss */
+.one-third {
+  width: 33.33%;
+}
+
+/* line 55, ../sass/_base.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 56, ../sass/_base.scss */
+.inline-block {
+  display: inline-block !important;
+}
+
+/* line 57, ../sass/_base.scss */
+.push-double--bottom {
+  margin-bottom: 40px !important;
+}
+
+/* line 58, ../sass/_base.scss */
+.push-double--ends {
+  margin: 40px 0 !important;
+}
+
+/* line 59, ../sass/_base.scss */
+.push--ends {
+  margin: 20px 0 !important;
+}
+
+/* line 60, ../sass/_base.scss */
+.flush {
+  margin: 0 !important;
+}
+
+/* line 61, ../sass/_base.scss */
+.hard--sides {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* line 62, ../sass/_base.scss */
+.relative {
+  position: relative;
+}
+
+/* line 63, ../sass/_base.scss */
+.text--highlight {
+  color: #D83454;
+}
+
+/* Buttons */
+/* line 69, ../sass/_base.scss */
+.btn {
+  padding: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #D83454;
+  width: 100%;
+  color: #FFF;
+  outline: none;
+  border: none;
+}
+
+/* General Definitions */
+/* line 83, ../sass/_base.scss */
+html, body {
+  height: 100%;
+  min-height: 1240px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 90, ../sass/_base.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: museosans;
+}
+
+/* line 99, ../sass/_base.scss */
+body {
+  background-color: #EEF4F2;
+  font-size: 2vw;
+  font-weight: 300;
+}
+
+/* Icons */
+/* line 108, ../sass/_base.scss */
+.icon-phone:before {
+  content: '';
+  display: inline-block;
+  background-image: url("../images/icon-phone.svg");
+  width: 5vw;
+  height: 5vh;
+  margin-right: 1.5vh;
+  background-position: 0px 1.4vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 108, ../sass/_base.scss */
+.icon-email:before {
+  content: '';
+  display: inline-block;
+  background-image: url("../images/icon-email.svg");
+  width: 5vw;
+  height: 5vh;
+  margin-right: 1.5vh;
+  background-position: 0px 1.4vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 3, ../sass/_overrides.scss */
+.carousel-indicators .active {
+  background-color: #777;
+}
+/* line 6, ../sass/_overrides.scss */
+.carousel-indicators li {
+  border: 1px solid #777;
+}
+
+/* line 4, ../sass/app.scss */
+a:focus {
+  outline: 0;
+}
+
+/* line 8, ../sass/app.scss */
+p {
+  font-size: 2vw;
+}
+
+/* line 12, ../sass/app.scss */
+.map-information-box {
+  text-align: left;
+  line-height: 0.3;
+  color: #777;
+}
+/* line 16, ../sass/app.scss */
+.map-information-box p {
+  font-size: 12px;
+}
+
+/* line 21, ../sass/app.scss */
+.section-view {
+  height: 100vh;
+  text-align: center;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: center;
+}
+/* line 28, ../sass/app.scss */
+.section-view form {
+  width: 33.33%;
+  margin: 0 auto;
+}
+
+/* line 34, ../sass/app.scss */
+.tag-line {
+  width: 66.6%;
+}
+
+/* line 38, ../sass/app.scss */
+.section--white {
+  background-color: white;
+}
+
+/* line 40, ../sass/app.scss */
+.section-item {
+  align-self: flex-end;
+  padding: 10px 0;
+}
+
+/* line 45, ../sass/app.scss */
+.section-item--start {
+  align-self: flex-start;
+  position: relative;
+  height: 100%;
+}
+
+/* line 51, ../sass/app.scss */
+.service-head {
+  margin: 40px 0;
+}
+
+/* line 55, ../sass/app.scss */
+.theme--pink {
+  background-color: #D83454;
+  color: #FFF;
+}
+/* line 58, ../sass/app.scss */
+.theme--pink .tag-line {
+  display: inline-block;
+  font-size: 1.5vw;
+  margin: 40px auto;
+}
+/* line 63, ../sass/app.scss */
+.theme--pink .heading {
+  color: #FFF;
+}
+
+/* line 68, ../sass/app.scss */
+.logo {
+  background-image: url("../images/spectacles.png");
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: auto;
+}
+
+/* line 76, ../sass/app.scss */
+.icon--slide-down {
+  border: 3px solid #FFF;
+  background-color: #D83454;
+  color: #FFF;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  display: block;
+  position: relative;
+  bottom: 0px;
+}
+/* line 25, ../sass/_base.scss */
+.icon--slide-down:before {
+  content: '';
+  background: 10px 15px url("../images/dropdown-icon.png") no-repeat;
+  background-size: 60%;
+  width: 40px;
+  height: 30px;
+  display: block;
+}
+
+/* line 80, ../sass/app.scss */
+.icon--slide-down--dark {
+  border: 3px solid #403F41;
+  background-color: #FFF;
+  color: #403F41;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  display: block;
+  position: relative;
+  bottom: 0px;
+  position: absolute;
+  bottom: 10px;
+  left: 48%;
+}
+/* line 25, ../sass/_base.scss */
+.icon--slide-down--dark:before {
+  content: '';
+  background: 10px 15px url("../images/dropdown-icon-black.png") no-repeat;
+  background-size: 60%;
+  width: 40px;
+  height: 30px;
+  display: block;
+}
+
+/* line 87, ../sass/app.scss */
+.geek-think-1 {
+  background-image: url("../images/images-with-computer-guy.png");
+  height: 400px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+}
+
+/* line 91, ../sass/app.scss */
+.geek-think-2 {
+  background-image: url("../images/images-with-computer-guy1.png");
+  height: 400px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+}
+
+/* line 95, ../sass/app.scss */
+.geek-think-3 {
+  background-image: url("../images/images-with-computer-guy2.png");
+  height: 400px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+}
+
+/* line 99, ../sass/app.scss */
+.service-symbol {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #D83454;
+  margin: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 108, ../sass/app.scss */
+.service-symbol .symbol {
+  width: 130px;
+  height: 100px;
+  background-repeat: no-repeat;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* line 117, ../sass/app.scss */
+.development-service {
+  background-image: url("../images/development-service.png");
+}
+
+/* line 121, ../sass/app.scss */
+.design-service {
+  background-image: url("../images/design-service.png");
+}
+
+/* line 125, ../sass/app.scss */
+.research-service {
+  background-image: url("../images/research-service.png");
+}
+
+/* line 129, ../sass/app.scss */
+.branding-service {
+  background-image: url("../images/branding-service.png");
+}
+
+/* line 133, ../sass/app.scss */
+.slider {
+  display: block;
+  position: relative;
+  top: 15%;
+}
+/* line 138, ../sass/app.scss */
+.slider:before {
+  content: "<";
+  position: absolute;
+  left: 40px;
+  color: #788290;
+  font-size: 1em;
+  margin-top: 40px;
+  padding: 10px;
+  top: 25px;
+}
+/* line 148, ../sass/app.scss */
+.slider:after {
+  content: ">";
+  position: absolute;
+  right: 40px;
+  color: #788290;
+  font-size: 1em;
+  margin-top: 40px;
+  padding: 10px;
+  top: 25px;
+}
+
+/* line 160, ../sass/app.scss */
+.client-logo, .client-logo-carousel {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: auto 60%;
+  margin: 60px 0px 0px 100px;
+  width: 250px;
+  height: 100px;
+}
+
+/* line 169, ../sass/app.scss */
+.client-logo-carousel {
+  margin: 60px 40%;
+  background-size: auto 30%;
+  width: 100%;
+}
+
+/* line 175, ../sass/app.scss */
+.client-logo-1 {
+  background-image: url("../images/client1.png");
+}
+
+/* line 179, ../sass/app.scss */
+.client-logo-2 {
+  background-image: url("../images/client2.png");
+}
+
+/* line 183, ../sass/app.scss */
+.client-logo-3 {
+  background-image: url("../images/client3.png");
+}
+
+/* line 187, ../sass/app.scss */
+.heading {
+  color: #403F41;
+  font-size: 5vw;
+  margin-bottom: 40px;
+}
+
+/* line 193, ../sass/app.scss */
+.input-group {
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+/* line 198, ../sass/app.scss */
+textarea {
+  resize: none;
+}
+
+/* line 202, ../sass/app.scss */
+input, textarea {
+  padding: 10px;
+  border: 2px solid #D9DDE1;
+  color: #403F41;
+  background-color: #FBFBFB;
+}
+
+/* line 209, ../sass/app.scss */
+input, textarea, button {
+  width: 100%;
+  border-radius: 3px;
+  font-size: 1.5vw;
+  outline: none;
+}
+
+/* line 217, ../sass/app.scss */
+.service-section p {
+  margin: 40px 0;
+}
+/* line 220, ../sass/app.scss */
+.service-section .service-item {
+  display: inline-block;
+}
+
+/* line 225, ../sass/app.scss */
+h6 {
+  margin: 0;
+}
+
+/* line 229, ../sass/app.scss */
+*::-webkit-input-placeholder {
+  color: #403F41;
+}
+
+/* line 233, ../sass/app.scss */
+.map:before {
+  content: 'How to find us';
+}
+
+/* line 237, ../sass/app.scss */
+.height-60 {
+  height: 60vh;
+}
+
+/* line 241, ../sass/app.scss */
+.client-carousel, .contact-mobile {
+  display: none;
+}
+
+/* line 245, ../sass/app.scss */
+.contact-desktop {
+  display: block;
+}
+
+/* Tablet + Mobile Media Queries */
+@media screen and (max-device-width: 1240px) {
+  /* line 252, ../sass/app.scss */
+  p, body, .section-view:first-child .tag-line {
+    font-size: 3vh;
+  }
+
+  /* line 255, ../sass/app.scss */
+  .tag-line {
+    width: 100%;
+  }
+
+  /* line 258, ../sass/app.scss */
+  .heading {
+    font-size: 8vh;
+    margin-bottom: 20px;
+  }
+
+  /* line 262, ../sass/app.scss */
+  .service-head {
+    margin: 10px auto !important;
+  }
+
+  /* line 265, ../sass/app.scss */
+  input, textarea, button, .btn {
+    font-size: 1em;
+  }
+
+  /* line 268, ../sass/app.scss */
+  .contact-desktop {
+    display: none;
+  }
+
+  /* line 271, ../sass/app.scss */
+  .contact-mobile {
+    display: block;
+  }
+
+  /* line 274, ../sass/app.scss */
+  .service-symbol {
+    margin: 5px 20px;
+    float: left;
+  }
+  /* line 277, ../sass/app.scss */
+  .service-symbol .symbol {
+    width: 60px;
+    background-size: 100%;
+    margin: 0;
+    top: 25%;
+    position: relative;
+    left: 25%;
+  }
+
+  /* line 287, ../sass/app.scss */
+  .service-item {
+    width: 100%;
+    margin: 5% 0 0 10%;
+    text-align: left;
+  }
+}
+/* Tablets Media Query */
+@media screen and (min-device-width: 600px) and (max-device-width: 1240px) {
+  /* line 297, ../sass/app.scss */
+  .logo {
+    height: 190px;
+  }
+
+  /* line 302, ../sass/app.scss */
+  .section-view form {
+    width: 80%;
+  }
+
+  /* line 307, ../sass/app.scss */
+  textarea {
+    height: 30vh;
+  }
+
+  /* line 310, ../sass/app.scss */
+  .service-section p {
+    display: inline-block;
+    margin: 40px 0;
+  }
+
+  /* line 315, ../sass/app.scss */
+  .service-symbol {
+    width: 120px;
+    height: 120px;
+    margin: 5px 40px;
+  }
+  /* line 319, ../sass/app.scss */
+  .service-symbol .symbol {
+    height: 60px;
+  }
+
+  /* line 324, ../sass/app.scss */
+  .branding-service {
+    line-height: 2em;
+  }
+
+  /* line 328, ../sass/app.scss */
+  .icon--slide-down:before {
+    content: '';
+    line-height: 1.8em;
+  }
+
+  /* line 333, ../sass/app.scss */
+  .map:before {
+    content: 'Find us';
+  }
+
+  /* line 337, ../sass/app.scss */
+  .slider {
+    top: 5%;
+  }
+  /* line 339, ../sass/app.scss */
+  .slider:before {
+    content: '<';
+    top: 35%;
+  }
+  /* line 343, ../sass/app.scss */
+  .slider:after {
+    content: '>';
+    top: 35%;
+  }
+
+  /* line 349, ../sass/app.scss */
+  .client-logo {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    background-position: 50%;
+    margin: 0 0 50px 0;
+    width: 50%;
+    height: 150px;
+  }
+
+  /* line 359, ../sass/app.scss */
+  .icon--slide-down--dark {
+    left: 45%;
+  }
+}
+/* Mobile Media Queries */
+@media screen and (min-device-width: 320px) and (max-device-width: 599px) {
+  /* line 368, ../sass/app.scss */
+  .logo {
+    height: 65px;
+  }
+
+  /* line 372, ../sass/app.scss */
+  .client-carousel {
+    display: block;
+  }
+
+  /* line 377, ../sass/app.scss */
+  .section-view form {
+    width: 100%;
+  }
+
+  /* line 382, ../sass/app.scss */
+  textarea {
+    height: 20vh;
+  }
+
+  /* line 386, ../sass/app.scss */
+  .section-item {
+    width: 100%;
+  }
+
+  /* line 391, ../sass/app.scss */
+  .section-view:first-child .tag-line {
+    font-size: 1em;
+  }
+
+  /* line 396, ../sass/app.scss */
+  .service-symbol {
+    width: 60px;
+    height: 60px;
+  }
+  /* line 400, ../sass/app.scss */
+  .service-symbol .symbol {
+    background-size: 50%;
+    height: 30px;
+  }
+
+  /* line 406, ../sass/app.scss */
+  .service-section p {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  /* line 412, ../sass/app.scss */
+  .slider {
+    display: none;
+  }
+
+  /* line 416, ../sass/app.scss */
+  .geek-think-1, .geek-think-2, .geek-think-3 {
+    height: 200px;
+    width: 250px;
+  }
+
+  /* line 421, ../sass/app.scss */
+  .icon--slide-down--dark {
+    left: 40%;
+  }
+}
