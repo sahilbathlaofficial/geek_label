@@ -3,7 +3,8 @@ MainApp = {
 		this.handleScrollEvent();
 		this.renderMap();
 		this.lockScreen();
-		this.handleSoftKeyboard();
+		// Todo - work in progress
+		// this.handleSoftKeyboard();
 	},
 
 	handleScrollEvent: function (event) {
@@ -53,17 +54,19 @@ MainApp = {
 		}
 	},
 
+	/*
+		WIP - Handle viewport height when soft keyboard is opened on mobile
+	*/
 	handleSoftKeyboard: function () {
 		var height = $('.section-view').height();
 		$('input, textarea').focus(function () {
-			var heightChange = $('.section-view').height() - height;
+			var heightChange = height - $('.section-view').height();
 			if (heightChange) {
 				$('.section-view').height(height + heightChange);
 				$(this).parent().scrollIntoView();
 			}
 		}).blur(function () {
 			if (!$('input:active, textarea:active').length) {
-				height = $('.section-view').height();
 				$('.section-view').height('');
 				$(this).parent().scrollIntoView();
 			}
